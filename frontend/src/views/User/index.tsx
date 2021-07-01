@@ -9,7 +9,6 @@ const User = () => {
     const run = async () => {
       const users = await getUsers();
       setUsers(users);
-      console.log(users);
     };
 
     run();

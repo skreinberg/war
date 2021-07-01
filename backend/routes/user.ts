@@ -42,15 +42,13 @@ router.post('/', async (req, res) => {
 // Get game by name. `name` is a required query parameter
 router.get('/user', async (req, res) => {
   const userRepository = getConnection().getRepository(User); // you can also get it via getConnection().getRepository() or getManager().getRepository()
-  console.log(req.query.name);
+
   const user = await userRepository.findOne({
     where: {
       name: req.query.name,
     },
     relations: ['wins', 'wins.loser', 'losses', 'losses.winner'],
   });
-
-  console.log(user);
 
   if (!user) {
     return res.send('No User!');

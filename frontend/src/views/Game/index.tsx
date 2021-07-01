@@ -22,7 +22,7 @@ const Game = () => {
   });
 
   const parsedMoves = game.moves ? JSON.parse(game.moves) : undefined;
-  console.log(parsedMoves);
+
   return (
     <div className='w-4/5 mx-auto pt-12'>
       <Navbar />
