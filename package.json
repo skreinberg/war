@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "build": "yarn run clean && yarn run backend:build && yarn run frontend:build",
+    "clean": "cd backend && rimraf dist && cd ../frontend && rimraf build",
+    "cloudrun": "cd backend/dist cd && node server",
+    "dev": "concurrently \"yarn run frontend:dev\" \"yarn run backend:dev\"",
+    "backend:build": "cd backend && tsc",
+    "backend:dev": "cd backend && nodemon --watch './**/*.ts' --exec 'ts-node' server.ts",
+    "backend:test": "cd backend && yarn run test",
+    "frontend:build": "cd frontend && yarn run build",
+    "frontend:dev": "cd frontend && yarn run start",
+    "frontend:test": "cd frontend && yarn run test",
+    "test": "yarn run backend:test && yarn run frontend:test"
+  }
+}
