@@ -4,14 +4,16 @@ This repository includes a full-stack application that plays War. The backend AP
 
 #### Technologies Used
 
-- Vanilla NodeJS server with express
+- Vanilla NodeJS server with Express
 - Postgres managed by TypeORM
 - create-react-app frontend with TailwindCSS
-- prettier for code formatting
+- Prettier for code formatting
 
 #### Considerations
 
 It was a tough decision whether or not to go with certain NPM packages. For example, TypeORM and create-react-app are probably overkill for the scope of this project. However, I wanted to show that I am familiar with common production-ready packages that are commonly incorporated in larger projects.
+
+I purposely included the .env file in `/frontend`. I understand this might be a point of contention -- since frontend variables are baked into the code during build, I decided it would be best to leave the file in for clarity. Saving the backend variables would not be safe and that is why I included `/backend/.env.example`.
 
 #### Running App Locally
 
@@ -62,3 +64,8 @@ With a little more time, I would have created terraform scripts in order to easi
 Docker file can be built by running `docker build . -t app` from the root directory.
 
 Hosted URL: [https://site-op2heymbrq-uc.a.run.app/](https://site-op2heymbrq-uc.a.run.app/)
+
+#### Nice to Add
+
+- Add migrations -- it is hard to run tests in Github Actions without these
+- Add more tests. There are a decent number of tests but this can be improved. Testing can be done by running `yarn run test` from the root directory
