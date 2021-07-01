@@ -30,6 +30,13 @@ beforeAll(async () => {
 
 afterAll(async () => {
   const connection = getConnection();
+
+  const userRepository = connection.getRepository(User);
+  const users = await userRepository.find({
+    where: [{ name: 'Test User' }, { name: 'Test User 2' }],
+  });
+
+  await userRepository.remove(users);
   await connection.close();
 });
 

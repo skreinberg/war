@@ -10,16 +10,6 @@ test('GET /', async () => {
     });
 });
 
-test('GET /user', async () => {
-  await supertest(app)
-    .get('/api/user/user')
-    .query({ name: 'Test User 2' })
-    .expect(200)
-    .then((response) => {
-      expect(response.body.user.name).toEqual('Test User 2');
-    });
-});
-
 test('POST /', async () => {
   await supertest(app)
     .post('/api/user')
@@ -27,5 +17,15 @@ test('POST /', async () => {
     .expect(200)
     .then((response) => {
       expect(response.body.name).toEqual('Test User 2');
+    });
+});
+
+test('GET /user', async () => {
+  await supertest(app)
+    .get('/api/user/user')
+    .query({ name: 'Test User 2' })
+    .expect(200)
+    .then((response) => {
+      expect(response.body.user.name).toEqual('Test User 2');
     });
 });

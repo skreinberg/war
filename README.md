@@ -67,5 +67,5 @@ Hosted URL: [https://site-op2heymbrq-uc.a.run.app/](https://site-op2heymbrq-uc.a
 
 #### Nice to Add
 
-- Add migrations -- it is hard to run tests in Github Actions without these
-- Add more tests. There are a decent number of tests but this can be improved. Testing can be done by running `yarn run test` from the root directory
+- Add migrations -- it is hard to run tests in Github Actions without these.
+- Add more tests. There are a decent number of tests but this can be improved. Testing can be done by running `yarn run test` from the root directory.
